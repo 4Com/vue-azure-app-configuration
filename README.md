@@ -1,0 +1,1 @@
+# vue-azure-app-configuration
