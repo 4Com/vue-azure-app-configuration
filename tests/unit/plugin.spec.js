@@ -1,0 +1,32 @@
+import { createLocalVue } from '@vue/test-utils'
+import { VueAzureAppConfiguration } from '@/plugin'
+
+const localVue = createLocalVue()
+localVue.use(VueAzureAppConfiguration, {
+  connectionString: 'Endpoint=https://example.azconfig.io;Id=ABC123;Secret=ABC123',
+  featureFlagLabel: 'testFeatureFlagLabel'
+})
+
+describe('plugin.js', () => {
+  it('Plugin registers client object', () => {
+    expect(localVue.prototype.$azureAppConfig.client).toBeDefined()
+  })
+
+  it('Plugin registers options object without connection string', () => {
+    expect(localVue.prototype.$azureAppConfig.options).toStrictEqual({
+      featureFlagLabel: 'testFeatureFlagLabel'
+    })
+  })
+
+  it('Plugin registers getFeatureFlagAsync() method', () => {
+    expect(localVue.prototype.$azureAppConfig.getFeatureFlagAsync).toBeDefined()
+  })
+
+  it('Plugin registers isFeatureFlagEnabledAsync() method', () => {
+    expect(localVue.prototype.$azureAppConfig.isFeatureFlagEnabledAsync).toBeDefined()
+  })
+
+  it('Plugin registers feature-flag directive', () => {
+    expect(localVue.options.directives['feature-flag']).toBeDefined()
+  })
+})
