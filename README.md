@@ -1,5 +1,7 @@
 # Vue.js Azure App Configuration
 
+[![CI](https://github.com/4Com/vue-azure-app-configuration/actions/workflows/build.yml/badge.svg)](https://github.com/4Com/vue-azure-app-configuration/actions/workflows/build.yml)
+
 Wrapper library of Microsofts [Azure App Configuration SDK for JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/main/sdk/appconfiguration/app-configuration) for Vue.js applications.
 
 ## Setup

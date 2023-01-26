@@ -1,0 +1,16 @@
+name: Increment Version
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Patch version
+        run: yarn version --patch
+      - name: Publish
+        run: yarn publish
