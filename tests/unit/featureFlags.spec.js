@@ -93,7 +93,7 @@ describe('featureFlags.js', () => {
     setupAzureAppConfigClient(false)
     expect(await wrapper.vm.$azureAppConfig.isFeatureFlagEnabledAsync(testFeatureFlagName)).toBe(false)
   })
-  
+
   it('isFeatureFlagEnabledAsync() returns false when feature flag not found', async () => {
     expect(await wrapper.vm.$azureAppConfig.isFeatureFlagEnabledAsync(notFoundFeatureFlagName)).toBe(false)
   })
