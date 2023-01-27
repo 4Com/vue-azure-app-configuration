@@ -1,7 +1,7 @@
 {
   "name": "@4com/vue-azure-app-configuration",
   "description": "Wrapper library of Microsofts Azure App Configuration SDK for JavaScript for Vue.js applications",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "main": "./src/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",

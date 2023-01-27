@@ -9,11 +9,11 @@ selenium-debug.log
 chromedriver.log
 geckodriver.log
 
-# testing
+# Testing output
 /coverage
 junit.xml
 
-# local env files
+# Local env files
 .env.local
 .env.*.local
 
