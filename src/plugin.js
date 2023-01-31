@@ -1,5 +1,6 @@
 import { AppConfigurationClient } from '@azure/app-configuration'
-import { getFeatureFlagAsync, isFeatureFlagEnabledAsync, featureFlagDirective } from '@/featureFlags'
+import { getFeatureFlagAsync, isFeatureFlagEnabledAsync, isFeatureFlagEnabledForUserAsync } from '@/featureFlag'
+import FeatureFlag from '@/FeatureFlag.vue'
 
 export const VueAzureAppConfiguration = function (Vue, options) {
   const client = new AppConfigurationClient(options.connectionString)
@@ -9,8 +10,9 @@ export const VueAzureAppConfiguration = function (Vue, options) {
     client,
     options,
     getFeatureFlagAsync,
-    isFeatureFlagEnabledAsync
+    isFeatureFlagEnabledAsync,
+    isFeatureFlagEnabledForUserAsync
   }
 
-  Vue.directive('feature-flag', featureFlagDirective)
+  Vue.component('feature-flag', FeatureFlag)
 }

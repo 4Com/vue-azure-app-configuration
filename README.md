@@ -33,15 +33,15 @@ The following options can be passed within the second object parameter when inst
 | Option | Description |
 | :-- | :-- |
 | `connectionString` | For authenticating the client using a connection string. |
-| `featureFlagLabel` | The default feature flag label used as a fallback if no label argument is passed to any of the `getFeatureFlagAsync()` or `isFeatureFlagEnabledAsync()` methods, or the `v-feature-flag` directive. |
+| `featureFlagLabel` | The default feature flag label used as a fallback if no label argument is passed to any of the `getFeatureFlagAsync()` or `isFeatureFlagEnabledAsync()` methods, or the `feature-flag` component. |
 
 Access the options passed when installing the plugin in components at `this.$azureAppConfig.options`.
 
-## Directives
+## Components
 
 | Example | Description |
 | :-- | :-- |
-| `v-feature-flag="'name'"` <br> or <br> `v-feature-flag:label="'name'"` | Conditionally displays the element based on whether the feature flag with the provided name and (optional) label is enabled using `Element.style.display`. The `label` argument overrides the `featureFlagLabel` if provided in the plugin options. |
+| `<feature-flag name="MyFeatureFlag" label="Label" user="me@example.com">` | Conditionally renders the element based on whether the feature flag with the provided name and (optional) label is enabled for the (optional) specified user. The `label` property overrides the `featureFlagLabel` if provided in the plugin options. |
 
 ## Global Methods
 
@@ -49,14 +49,15 @@ Call the following global methods from components at `this.$azureAppConfig`.
 
 | Signature | Description |
 | :-- | :-- |
-| `getFeatureFlagAsync(name, label)` | Gets the feature flag with the passed name and (optional) label. Returns the [`ConfigurationSetting`](https://learn.microsoft.com/en-gb/javascript/api/@azure/app-configuration/configurationsetting)[`<FeatureFlagValue>`](https://learn.microsoft.com/en-gb/javascript/api/@azure/app-configuration/featureflagvalue). Returns `null` if the feature flag was not found. |
-| `isFeatureFlagEnabledAsync(name, label)` | Returns `true` when the feature flag with the passed name and (optional) label is enabled. Returns `false` when the feature flag was not found. |
+| `getFeatureFlagAsync(name, label)` | Gets the feature flag with the passed name and (optional) label. Returns the [`ConfigurationSetting`](https://learn.microsoft.com/en-gb/javascript/api/@azure/app-configuration/configurationsetting)[`<FeatureFlagValue>`](https://learn.microsoft.com/en-gb/javascript/api/@azure/app-configuration/featureflagvalue). Returns `null` if the feature flag is not found. |
+| `isFeatureFlagEnabledAsync(name, label)` | Returns `true` when the feature flag with the passed name and (optional) label is enabled. Returns `false` when the feature flag is not found. |
+| `isFeatureFlagEnabledForUserAsync(name, label, user)` | Returns `true` when the feature flag with the passed name and (optional) label is enabled for the (optional) specified user. Returns `false` when the feature flag is not found. |
 
 ## Limitations
 
 ### Features
 
-This library currently only provides instance methods and a directive for ease with using feature flags.
+This library currently only provides instance methods and a component for ease with using feature flags.
 
 However, the [`AppConfigurationClient`](https://learn.microsoft.com/en-gb/javascript/api/@azure/app-configuration/appconfigurationclient) is exposed at `this.$azureAppConfig.client`.
 

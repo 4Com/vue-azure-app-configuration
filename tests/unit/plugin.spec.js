@@ -26,7 +26,11 @@ describe('plugin.js', () => {
     expect(localVue.prototype.$azureAppConfig.isFeatureFlagEnabledAsync).toBeDefined()
   })
 
-  it('Plugin registers feature-flag directive', () => {
-    expect(localVue.options.directives['feature-flag']).toBeDefined()
+  it('Plugin registers isFeatureFlagEnabledForUserAsync() method', () => {
+    expect(localVue.prototype.$azureAppConfig.isFeatureFlagEnabledForUserAsync).toBeDefined()
+  })
+
+  it('Plugin registers feature-flag component', () => {
+    expect(localVue.options.components['feature-flag']).toBeDefined()
   })
 })
