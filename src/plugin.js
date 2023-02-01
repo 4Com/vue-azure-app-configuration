@@ -1,6 +1,6 @@
 import { AppConfigurationClient } from '@azure/app-configuration'
-import { getFeatureFlagAsync, isFeatureFlagEnabledAsync, isFeatureFlagEnabledForUserAsync } from '@/featureFlag'
-import FeatureFlag from '@/FeatureFlag.vue'
+import { getFeatureFlagAsync, isFeatureFlagEnabledAsync, isFeatureFlagEnabledForUserAsync } from './featureFlag'
+import FeatureFlag from './FeatureFlag.vue'
 
 export const VueAzureAppConfiguration = function (Vue, options) {
   const client = new AppConfigurationClient(options.connectionString)
