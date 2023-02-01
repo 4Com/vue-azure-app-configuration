@@ -1,0 +1,1 @@
+export { VueAzureAppConfiguration } from './plugin'
