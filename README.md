@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/4Com/vue-azure-app-configuration/actions/workflows/build.yml/badge.svg)](https://github.com/4Com/vue-azure-app-configuration/actions/workflows/build.yml)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=4Com_vue-azure-app-configuration&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=4Com_vue-azure-app-configuration)
+
 Wrapper library of Microsofts [Azure App Configuration SDK for JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/main/sdk/appconfiguration/app-configuration) for Vue.js applications.
 
 ## Setup
