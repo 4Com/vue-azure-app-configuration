@@ -30,7 +30,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/vue": "^5.8.1",
     "@vue/cli-plugin-babel": "~4.5.13",
-    "@vue/cli-plugin-eslint": "~4.5.13",
+    "@vue/cli-plugin-eslint": "~5.0.8",
     "@vue/cli-plugin-unit-jest": "~4.5.13",
     "@vue/cli-service": "~4.5.13",
     "@vue/eslint-config-standard": "^6.0.0",
