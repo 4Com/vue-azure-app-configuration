@@ -13,13 +13,14 @@
   </div>
 </template>
 
-<script>
-import Sandbox from './Sandbox'
+<script lang="ts">
+import { defineComponent } from "vue";
+import Sandbox from "./Sandbox.vue";
 
-export default {
-  name: 'App',
+export default defineComponent({
+  name: "App",
   components: {
-    Sandbox
-  }
-}
+    Sandbox,
+  },
+});
 </script>

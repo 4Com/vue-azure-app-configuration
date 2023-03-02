@@ -1,8 +1,6 @@
 # Vue.js Azure App Configuration
 
-[![CI](https://github.com/4Com/vue-azure-app-configuration/actions/workflows/build.yml/badge.svg)](https://github.com/4Com/vue-azure-app-configuration/actions/workflows/build.yml)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=4Com_vue-azure-app-configuration&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=4Com_vue-azure-app-configuration)
+[![CI](https://github.com/4Com/vue-azure-app-configuration/actions/workflows/build.yml/badge.svg)](https://github.com/4Com/vue-azure-app-configuration/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=4Com_vue-azure-app-configuration&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=4Com_vue-azure-app-configuration)
 
 Wrapper library of Microsofts [Azure App Configuration SDK for JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/main/sdk/appconfiguration/app-configuration) for Vue.js applications.
 
@@ -20,7 +18,7 @@ Wrapper library of Microsofts [Azure App Configuration SDK for JavaScript](https
 
 ### Use the Plugin
 
-Install the plugin by adding it to your `main.js`.
+Install the plugin by adding it to your `main.js` or `main.ts`.
 
 ```
 import { VueAzureAppConfiguration } from '@4com/vue-azure-app-configuration'
@@ -73,4 +71,4 @@ This library currently only supports authentication using a connection string.
 
 The sandbox can be used while developing and testing out features of the library. It uses [BootstrapVue](https://bootstrap-vue.org/) components.
 
-Use `yarn serve` to start the sandbox live reload server.
+Use `yarn dev` to start the sandbox live reload server.

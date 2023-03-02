@@ -1,0 +1,25 @@
+{
+  "extends": "../sandbox/tsconfig.json",
+  "include": [
+    "**/*"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "lib": [],
+    "types": [
+      "node",
+      "jsdom",
+      "vitest/globals"
+    ],
+    "paths": {
+      "@/*": [
+        "../src/*"
+      ]
+    }
+  },
+  "references": [
+    {
+      "path": "../src/tsconfig.json"
+    }
+  ]
+}

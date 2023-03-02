@@ -4,30 +4,52 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FeatureFlag',
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "FeatureFlag",
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
-    label: String,
-    user: String
+    label: {
+      type: String,
+      default: null,
+    },
+    user: {
+      type: String,
+      default: null,
+    },
   },
-  data () {
+  data() {
     return {
-      enabled: false
-    }
+      enabled: false,
+    };
   },
-  async created () {
-    this.$watch(vm => [vm.name, vm.label, vm.user], async () => {
-      if (this.user == null || this.user.match(/^\s*$/) !== null) {
-        this.enabled = await this.$azureAppConfig.isFeatureFlagEnabledAsync(this.name, this.label)
-      } else {
-        this.enabled = await this.$azureAppConfig.isFeatureFlagEnabledForUserAsync(this.name, this.label, this.user)
-      }
-    }, { immediate: true })
-  }
-}
+  async created(): Promise<void> {
+    this.$watch(
+      function () {
+        return [this.name, this.label, this.user];
+      },
+      async () => {
+        if (this.user == null || this.user.match(/^\s*$/) !== null) {
+          this.enabled = await this.$azureAppConfig.isFeatureFlagEnabledAsync(
+            this.name,
+            this.label
+          );
+        } else {
+          this.enabled =
+            await this.$azureAppConfig.isFeatureFlagEnabledForUserAsync(
+              this.name,
+              this.label,
+              this.user
+            );
+        }
+      },
+      { immediate: true }
+    );
+  },
+});
 </script>
